@@ -305,7 +305,22 @@ class CbApi(object):
         r.raise_for_status()
 
         return r.json()
+        
+    def investigation(self, id=None):
+        '''
+        get all investigations or a single investigation
+        '''
 
+        url = "%s/api" % (self.server)
+        if id is not None:
+            url = url + "/tagged_event/%s" % (id,)
+        else:
+            url = url + "/investigations"
+
+        r = requests.get(url, headers=self.token_header, verify=self.ssl_verify)
+        r.raise_for_status()
+        return r.json()
+        
     def watchlist(self, id=None):
         '''
         get all watchlists or a single watchlist
