@@ -38,10 +38,8 @@ def main(argv):
 
     # enumerate Invesigation 
     #
-    investigations = cb.investigation(opts.id)
-
-    # for each investigation 
-    for investigation in investigations:
-       pprint.pprint(investigation)
+    investigation = cb.investigation(opts.id)
+    
+    pprint.pprint(investigation)
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
