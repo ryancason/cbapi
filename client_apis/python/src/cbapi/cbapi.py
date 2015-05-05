@@ -308,6 +308,7 @@ class CbApi(object):
         
     def investigation(self, id=None):
         '''
+        This function is provided as an example but may change based on the URL provided as it is considered beta
         get all investigations or a single investigation
         '''
 
